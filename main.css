@@ -7,8 +7,8 @@ header img {
 	width: 60vw;
 }
 
-#search-bar {
-	width: 50vw;
+#search-container {
+	width: 70vw;
 	height: 80px;
 	display: flex;
 	flex-direction: row;
@@ -20,6 +20,8 @@ header img {
 #poke-search {
 	flex-grow: 1;
 	font-size: 3vw;
+	text-indent: 10px;
+	border-radius: 50px;
 	font-family: 'Montserrat', cursive;
 }
 
