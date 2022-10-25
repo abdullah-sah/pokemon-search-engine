@@ -14,7 +14,7 @@ header img {
 	flex-direction: row;
 	justify-content: center;
 	margin: 0 auto;
-	margin-top: 6vw;
+	margin-top: 148px;
 }
 
 #poke-search {
@@ -22,10 +22,62 @@ header img {
 	font-size: 3vw;
 	text-indent: 10px;
 	border-radius: 50px;
+	box-shadow: 2px 2px 20px 1px red;
 	font-family: 'Montserrat', cursive;
+}
+
+#poke-search::placeholder {
+	color: rgba(0, 0, 0, 0.3);
+	font-size: 2.3vw;
 }
 
 #poke-ball-img {
 	margin-left: -82px;
+	width: 74px;
+	height: 74px;
 	padding: 3px;
+	animation: pokeball-animation 1.6s ease 0s 1 normal forwards;
+}
+@keyframes pokeball-animation {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateX(-70vw) rotate(-180deg);
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: translateY(-65px);
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: translateY(-38px);
+	}
+
+	90% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: translateY(-12px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
 }
