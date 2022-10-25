@@ -4,6 +4,26 @@ header {
 }
 
 header img {
-	width: 40vw;
+	width: 60vw;
 }
 
+#search-bar {
+	width: 50vw;
+	height: 80px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 0 auto;
+	margin-top: 6vw;
+}
+
+#poke-search {
+	flex-grow: 1;
+	font-size: 3vw;
+	font-family: 'Montserrat', cursive;
+}
+
+#poke-ball-img {
+	margin-left: -82px;
+	padding: 3px;
+}
