@@ -13,12 +13,24 @@ async function fetchPokemon(pokemon) {
 	console.log(data);
 }
 
+const notFound = () => {
+	const p = document.createElement("p");
+	p.innerText = "You used notAPokemon! It's not very effective...";
+	const div = document.createElement("div");
+	div.classList.add("not-found");
+	div.append(p);
+	body.append(div);
+	setTimeout(() => {
+		body.removeChild(div);
+	}, 3000);
+};
+
 pokeBall.addEventListener("click", async () => {
 	// fetch fn here
 	try {
 		await fetchPokemon(searchBar.value);
 	} catch {
-		throw new Error("Pokemon not found");
+		notFound();
 	}
 });
 
@@ -27,7 +39,7 @@ searchBar.addEventListener("keyup", async (event) => {
 		try {
 			await fetchPokemon(event.target.value);
 		} catch {
-			throw new Error("Pokemon not found");
+			notFound();
 		}
 	}
 });

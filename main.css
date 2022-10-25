@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'Pokemon Gameboy';
+	src: url('./assets/fonts/PKMN\ RBYGSC.ttf');
+}
+
 header {
 	display: flex;
 	justify-content: center;
@@ -14,7 +19,7 @@ header img {
 	flex-direction: row;
 	justify-content: center;
 	margin: 0 auto;
-	margin-top: 148px;
+	margin-top: 48px;
 }
 
 #poke-search {
@@ -80,4 +85,26 @@ header img {
 		animation-timing-function: ease-out;
 		transform: translateY(0);
 	}
+}
+
+.not-found {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	font-size: 3vw;
+	font-family: 'Pokemon Gameboy', cursive;
+	color: white;
+	word-spacing: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	background-color:rgba(0, 0, 0, 0.9);
+	z-index: 3;
+}
+
+.not-found p {
+	margin-left: 20px;
+	margin-top: 100px;
 }
