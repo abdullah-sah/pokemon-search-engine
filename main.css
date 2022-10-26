@@ -128,7 +128,6 @@ header img {
 	width: 50%;	
 	height: 50vh;
 	border-radius: 16px;
-	background-color: grey;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -142,6 +141,7 @@ header img {
 	height: 10%;
 	text-align: center;
 	font-size: 2vw;
+	margin-bottom: 50px;
 }
 
 .pokemon-info {

@@ -4,13 +4,34 @@ const searchBar = document.querySelector("#poke-search");
 const pokeBall = document.querySelector("#poke-ball-img");
 const main = document.querySelector("main");
 
+const types = {
+	normal: ["#e6c5ac", "#315a7b"],
+	fire: ["#ffeebd", "#de7339"],
+	water: ["#8bc5cd", "#ffe69c"],
+	grass: ["#83cd6a", "#204a20"],
+	electric: ["#fff6a4", "#9c5200"],
+	ice: ["#94e6ee", "#52629c"],
+	fighting: ["#c5bdac", "#ac3131"],
+	poison: ["#a483c5", "#52397b"],
+	ground: ["#f6d520", "#8b6218"],
+	flying: ["#8bb4ee", "#4a417b"],
+	psychic: ["#f6de00", "#835a41"],
+	bug: ["#83c54a", "#6a8b5a"],
+	rock: ["#948b73", "#bd6239"],
+	ghost: ["#a4acd5", "#625a8b"],
+	dark: ["#a4a4a4", "#414141"],
+	dragon: ["#ffffff", "#293183"],
+	steel: ["#b4acac", "#838b83"],
+	fairy: ["#ffd5bd", "#9c5252"],
+};
+
 async function fetchPokemon(pokemon) {
 	// removing spaces from string and making it lowercase
 	pokemon = pokemon.replace(/\s/g, "");
 	pokemon = pokemon.toLowerCase();
 	const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
 	const data = await res.json();
-	console.log(data);
+	console.log(data.types[0].type.name);
 	return data;
 }
 
@@ -69,6 +90,8 @@ const createCard = async (pokemon) => {
 	const shinyImg = document.createElement("img");
 	const alt = `An image of the ${pokemon.name} pokemon.`;
 	const info = document.createElement("p");
+	div.style.backgroundColor = types[pokemon.types[0].type.name][0];
+	div.style.border = `5px solid ${types[pokemon.types[0].type.name][1]}`;
 	div.classList.add("pokemon-card");
 	title.innerText = pokemon.name;
 	title.classList.add("pokemon-title");
