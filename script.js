@@ -25,6 +25,8 @@ const types = {
 	fairy: ["#ffd5bd", "#9c5252"],
 };
 
+let cardCount = 0;
+
 async function fetchPokemon(pokemon) {
 	// removing spaces from string and making it lowercase
 	pokemon = pokemon.replace(/\s/g, "");
@@ -32,7 +34,14 @@ async function fetchPokemon(pokemon) {
 	const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
 	const data = await res.json();
 	console.log(data.types[0].type.name);
-	return data;
+	if (cardCount > 0) {
+		removeCard();
+		cardCount--;
+		return data;
+	} else {
+		cardCount++;
+		return data;
+	}
 }
 
 async function fetchPokedex(pokemon) {
