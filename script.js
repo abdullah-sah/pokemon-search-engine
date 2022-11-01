@@ -75,6 +75,7 @@ pokeBall.addEventListener("click", async () => {
 	// fetch fn here
 	try {
 		const pokemon = await fetchPokemon(searchBar.value);
+		addCard(pokemon);
 	} catch {
 		notFound();
 	}
